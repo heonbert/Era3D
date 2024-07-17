@@ -23,7 +23,7 @@ class nvdiffRenderer:
             ):
         self._mvp = proj @ mv #C,4,4
         self._image_size = image_size
-        self._glctx = dr.RasterizeGLContext()
+        self._glctx = dr.RasterizeCudaContext()
         _warmup(self._glctx, device=device)
 
     def render(self,
